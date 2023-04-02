@@ -14,6 +14,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 function App(): JSX.Element {
   const backgroundColor = "#222";
@@ -45,10 +46,10 @@ function App(): JSX.Element {
           gap: 110,
         }}>
           <Pressable style={({pressed})=> [styles.roundButton, pressed?styles.pressed:null]} onPress={()=>{}}>
-            <Text style={[styles.text, {fontSize: 40}]}>A</Text>
+            <MaterialIcons name="history" size={50} color={styles.text.color} />
           </Pressable>
           <Pressable style={({pressed})=> [styles.roundButton, pressed?styles.pressed:null]} onPress={()=>{}}>
-            <Text style={[styles.text, {fontSize: 40}]}>S</Text>
+            <MaterialIcons name="settings" size={50} color={styles.text.color} />
           </Pressable>
         </View>
       </View>
