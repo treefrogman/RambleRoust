@@ -30,10 +30,11 @@ function App(): JSX.Element {
         <Pressable style={({pressed})=> [styles.roundButton, {
           flex: 5,
         }, pressed?styles.pressed:null]} onPress={()=>{}}>
-          <Text style={[styles.text, {fontSize: 40}]}>TIME</Text>
+          <Text style={[styles.text, {fontSize: 100}]}>17:55</Text>
         </Pressable>
         <Pressable style={({pressed})=> [styles.roundButton, {
           flex: 3,
+          marginBottom: 0,
           backgroundColor: "#800",
         }, pressed?styles.pressed:null]} onPress={()=>{}}>
           <Text style={[styles.text, {fontSize: 40}]}>RECORD</Text>
@@ -43,12 +44,12 @@ function App(): JSX.Element {
           justifyContent: 'center',
           flexDirection: 'row',
           flex: 2,
-          gap: 110,
+          gap: 90,
         }}>
-          <Pressable style={({pressed})=> [styles.roundButton, pressed?styles.pressed:null]} onPress={()=>{}}>
+          <Pressable style={({pressed})=> [styles.roundButton, styles.smallButton, pressed?styles.pressed:null]} onPress={()=>{}}>
             <MaterialIcons name="history" size={50} color={styles.text.color} />
           </Pressable>
-          <Pressable style={({pressed})=> [styles.roundButton, pressed?styles.pressed:null]} onPress={()=>{}}>
+          <Pressable style={({pressed})=> [styles.roundButton, styles.smallButton, pressed?styles.pressed:null]} onPress={()=>{}}>
             <MaterialIcons name="settings" size={50} color={styles.text.color} />
           </Pressable>
         </View>
@@ -66,6 +67,9 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     width: 100,
     margin: 20,
+  },
+  smallButton: {
+    marginTop: 0,
   },
   pressed: {
     opacity: 0.5,
