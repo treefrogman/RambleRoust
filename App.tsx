@@ -14,8 +14,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
+import { NavBar } from './NavBar';
 
 function App(): JSX.Element {
   const [date, setDate] = useState(new Date("2000-01-01T08:00:00"));
@@ -55,20 +55,16 @@ function App(): JSX.Element {
         }, pressed?styles.pressed:null]} onPress={()=>{}}>
           <Text style={[styles.text, {fontSize: 40}]}>RECORD</Text>
         </Pressable>
-        <View style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'row',
-          flex: 2,
-          gap: 90,
-        }}>
-          <Pressable style={({pressed})=> [styles.roundButton, styles.smallButton, pressed?styles.pressed:null]} onPress={()=>{}}>
-            <MaterialIcons name="history" size={50} color={styles.text.color} />
-          </Pressable>
-          <Pressable style={({pressed})=> [styles.roundButton, styles.smallButton, pressed?styles.pressed:null]} onPress={()=>{}}>
-            <MaterialIcons name="settings" size={50} color={styles.text.color} />
-          </Pressable>
-        </View>
+        <NavBar buttons={[
+          {
+            symbol: "history",
+            onPress: () => null,
+          },
+          {
+            symbol: "settings",
+            onPress: () => null,
+          },
+        ]} />
       </View>
     </SafeAreaView>
   );

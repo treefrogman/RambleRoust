@@ -1,0 +1,6 @@
+{
+	"svgeditor.indentSize": 4,
+	"editor.indentSize": "tabSize",
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false
+}
