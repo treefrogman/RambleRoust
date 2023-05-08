@@ -1,13 +1,14 @@
 import { View, Text } from "react-native";
 import { ViewWithNavBar } from "../components/ViewWithNavBar";
 import { styles } from "../styles";
+import { ArchiveScreenProps } from "../types";
 
-export function ArchiveScreen() {
+export function ArchiveScreen({ navigation }: ArchiveScreenProps) {
   return (
     <ViewWithNavBar buttons={[
       {
         symbol: "arrow-forward",
-        onPress: () => null,
+        onPress: () => { navigation.goBack(); },
       },
     ]}>
       <View style={[styles.backgroundColor, {

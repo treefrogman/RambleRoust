@@ -1,13 +1,14 @@
 import { View, Text } from "react-native";
 import { ViewWithNavBar } from "../components/ViewWithNavBar";
 import { styles } from "../styles";
+import { SettingsScreenProps } from "../types";
 
-export function SettingsScreen() {
+export function SettingsScreen({ navigation }: SettingsScreenProps) {
   return (
     <ViewWithNavBar buttons={[
       {
         symbol: "arrow-back",
-        onPress: () => null,
+        onPress: () => { navigation.goBack(); },
       },
     ]}>
       <View style={[styles.backgroundColor, {

@@ -3,8 +3,9 @@ import { ViewWithNavBar } from "../components/ViewWithNavBar";
 import { styles } from "../styles";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 import { useState } from "react";
+import { MainScreenProps } from "../types";
 
-export function MainScreen() {
+export function MainScreen({ navigation }: MainScreenProps) {
   const [date, setDate] = useState(new Date("2000-01-01T08:00:00"));
 
   const onChange = (_event: unknown, selectedDate: Date | undefined) => {
@@ -24,11 +25,11 @@ export function MainScreen() {
     <ViewWithNavBar buttons={[
       {
         symbol: "history",
-        onPress: () => null,
+        onPress: () => { navigation.navigate('Archive'); },
       },
       {
         symbol: "settings",
-        onPress: () => null,
+        onPress: () => { navigation.navigate('Settings'); },
       },
     ]}>
       <View style={[styles.backgroundColor, {
