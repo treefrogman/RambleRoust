@@ -5,12 +5,12 @@ import {
   View,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import type { NavBarButtonConfig } from './types';
+import type { NavBarButtonConfig } from '../types';
+import { styles } from "../styles";
 
 type Props = {
-  buttons: any;
+  buttons: Array<NavBarButtonConfig>;
 };
-
 export function NavBar({ buttons }: Props): JSX.Element {
   return (
     <View style={{

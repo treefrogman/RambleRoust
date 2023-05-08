@@ -10,12 +10,12 @@ import {
   Pressable,
   SafeAreaView,
   StatusBar,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
-import { NavBar } from './NavBar';
+import { NavBar } from './components/NavBar';
+import { styles } from "./styles";
 
 function App(): JSX.Element {
   const [date, setDate] = useState(new Date("2000-01-01T08:00:00"));
@@ -69,28 +69,6 @@ function App(): JSX.Element {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  roundButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 999999,
-    backgroundColor: '#333',
-    aspectRatio: 1,
-    width: 100,
-    margin: 20,
-  },
-  smallButton: {
-    marginTop: 0,
-  },
-  pressed: {
-    opacity: 0.5,
-  },
-  text: {
-    fontSize: 10,
-    color: '#bbb',
-  },
-});
 
 function formatTime(date: Date) {
   return `${String(date.getHours()).padStart(2,"0")}:${String(date.getMinutes()).padStart(2,"0")}`;
