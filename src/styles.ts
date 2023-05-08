@@ -1,16 +1,19 @@
 import { StyleSheet } from 'react-native';
+import {
+  backgroundColor,
+  buttonColor,
+  textColor,
+} from './colors';
 
 export const styles = StyleSheet.create({
   roundButton: {
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 999999,
-    backgroundColor: '#333',
+    backgroundColor: buttonColor,
     aspectRatio: 1,
     width: 100,
     margin: 20,
-  },
-  smallButton: {
     marginTop: 0,
   },
   pressed: {
@@ -18,9 +21,9 @@ export const styles = StyleSheet.create({
   },
   text: {
     fontSize: 10,
-    color: '#bbb',
+    color: textColor,
   },
   backgroundColor: {
-    backgroundColor: '#222',
+    backgroundColor: backgroundColor,
   },
 });

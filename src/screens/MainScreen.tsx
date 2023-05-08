@@ -1,9 +1,10 @@
-import { View, Pressable, Text } from "react-native";
+import { View, Text } from "react-native";
 import { ViewWithNavBar } from "../components/ViewWithNavBar";
 import { styles } from "../styles";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 import { useState } from "react";
 import { MainScreenProps } from "../types";
+import { recordColor } from "../colors";
 
 export function MainScreen({ navigation }: MainScreenProps) {
   const [date, setDate] = useState(new Date("2000-01-01T08:00:00"));
@@ -38,18 +39,16 @@ export function MainScreen({ navigation }: MainScreenProps) {
         alignItems: 'center',
         justifyContent: 'center',
       }]}>
-        <Pressable style={({ pressed }) => [styles.roundButton, {
-          flex: 5,
-        }, pressed ? styles.pressed : null]} onPress={showModal}>
+        <RoundButton onPress={showModal} diameter={350}>
           <Text style={[styles.text, { fontSize: 100 }]}>{formatTime(date)}</Text>
         </Pressable>
         <Pressable style={({ pressed }) => [styles.roundButton, {
           flex: 3,
           marginBottom: 0,
-          backgroundColor: "#800",
+          backgroundColor: recordColor,
         }, pressed ? styles.pressed : null]} onPress={() => { }}>
           <Text style={[styles.text, { fontSize: 40 }]}>RECORD</Text>
-        </Pressable>
+        </RoundButton>
       </View>
     </ViewWithNavBar>
   );
