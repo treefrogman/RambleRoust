@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     backgroundColor: buttonColor,
     aspectRatio: 1,
     width: 100,
-    margin: 20,
+    margin: 35,
     marginTop: 0,
   },
   pressed: {

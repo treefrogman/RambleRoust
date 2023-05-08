@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 import { useState } from "react";
 import { MainScreenProps } from "../types";
+import { RoundButton } from "../components/RoundButton";
 import { recordColor } from "../colors";
 
 export function MainScreen({ navigation }: MainScreenProps) {
@@ -41,12 +42,8 @@ export function MainScreen({ navigation }: MainScreenProps) {
       }]}>
         <RoundButton onPress={showModal} diameter={350}>
           <Text style={[styles.text, { fontSize: 100 }]}>{formatTime(date)}</Text>
-        </Pressable>
-        <Pressable style={({ pressed }) => [styles.roundButton, {
-          flex: 3,
-          marginBottom: 0,
-          backgroundColor: recordColor,
-        }, pressed ? styles.pressed : null]} onPress={() => { }}>
+        </RoundButton>
+        <RoundButton onPress={()=>{}} diameter={230} color={recordColor}>
           <Text style={[styles.text, { fontSize: 40 }]}>RECORD</Text>
         </RoundButton>
       </View>

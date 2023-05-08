@@ -1,12 +1,12 @@
 
 import React from 'react';
 import {
-  Pressable,
   View,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import type { NavBarButtonConfig } from '../types';
 import { styles } from "../styles";
+import { RoundButton } from './RoundButton';
 
 type Props = {
   buttons: Array<NavBarButtonConfig>;
@@ -22,9 +22,9 @@ export function NavBar({ buttons }: Props): JSX.Element {
     }}>
       {
         buttons.map((button: NavBarButtonConfig, index: number) => (
-          <Pressable style={({ pressed }) => [styles.roundButton, styles.smallButton, pressed ? styles.pressed : null]} onPress={button.onPress} key={index}>
+          <RoundButton onPress={button.onPress} diameter={100} key={index}>
             <MaterialIcons name={button.symbol} size={50} color={styles.text.color} />
-          </Pressable>
+          </RoundButton>
         ))
       }
     </View>
