@@ -20,4 +20,7 @@ export const styles = StyleSheet.create({
     fontSize: 10,
     color: '#bbb',
   },
+  backgroundColor: {
+    backgroundColor: '#222',
+  },
 });

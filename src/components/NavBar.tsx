@@ -17,7 +17,7 @@ export function NavBar({ buttons }: Props): JSX.Element {
       alignItems: 'center',
       justifyContent: 'space-around',
       flexDirection: 'row',
-      flex: 2,
+      height: 120,
       width: "100%",
     }}>
       {
