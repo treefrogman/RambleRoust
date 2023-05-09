@@ -22,7 +22,7 @@ export function NavBar({ buttons }: Props): JSX.Element {
     <View style={[
       {
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: buttons.length > 1 ? 'space-between' : 'center',
         padding,
       },
       portrait ? {
