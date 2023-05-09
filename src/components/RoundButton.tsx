@@ -2,20 +2,18 @@
 import React from 'react';
 import {
   Pressable,
+  ViewStyle,
 } from 'react-native';
 import { styles } from "../styles";
 
 type Props = {
   onPress: () => void;
-  color?: string;
-  diameter?: number;
+  style?: ViewStyle;
   children?: React.ReactElement;
 };
-export function RoundButton({ onPress, color, diameter, children }: Props): JSX.Element {
-  const diameterStyle = diameter ? { width: diameter } : null;
-  const colorStyle = color ? { backgroundColor: color } : null;
+export function RoundButton({ onPress, style, children }: Props): JSX.Element {
   return (
-    <Pressable style={({ pressed }) => [styles.roundButton, pressed ? styles.pressed : null, colorStyle, diameterStyle]} onPress={onPress}>
+    <Pressable style={({ pressed }) => [styles.roundButton, pressed ? styles.pressed : null, style]} onPress={onPress}>
       {children}
     </Pressable>
   );

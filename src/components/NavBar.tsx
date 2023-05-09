@@ -22,7 +22,7 @@ export function NavBar({ buttons }: Props): JSX.Element {
     }}>
       {
         buttons.map((button: NavBarButtonConfig, index: number) => (
-          <RoundButton onPress={button.onPress} diameter={100} key={index}>
+          <RoundButton onPress={button.onPress} style={{ width: 100 }} key={index}>
             <MaterialIcons name={button.symbol} size={50} color={styles.text.color} />
           </RoundButton>
         ))

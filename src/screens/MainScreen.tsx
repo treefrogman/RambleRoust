@@ -40,10 +40,10 @@ export function MainScreen({ navigation }: MainScreenProps) {
         alignItems: 'center',
         justifyContent: 'center',
       }]}>
-        <RoundButton onPress={showModal} diameter={350}>
+        <RoundButton onPress={showModal} style={{ width: 350 }}>
           <Text style={[styles.text, { fontSize: 100 }]}>{formatTime(date)}</Text>
         </RoundButton>
-        <RoundButton onPress={()=>{}} diameter={230} color={recordColor}>
+        <RoundButton onPress={()=>{}} style={{ width: 230, backgroundColor: recordColor }}>
           <Text style={[styles.text, { fontSize: 40 }]}>RECORD</Text>
         </RoundButton>
       </View>
