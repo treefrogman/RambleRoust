@@ -41,12 +41,14 @@ export function MainScreen({ navigation }: MainScreenProps) {
         flex: 1,
         flexDirection: portrait ? 'column' : 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        gap: 50,
+        padding: 25,
       }]}>
-        <RoundButton onPress={showModal} style={{ width: 350 }}>
-          <Text style={[styles.text, { fontSize: 100 }]}>{formatTime(date)}</Text>
+        <RoundButton onPress={showModal} style={{ flex: 3, aspectRatio: portrait ? 1 : 1.7, maxWidth: '100%' }}>
+          <Text style={[styles.text, { fontSize: 80 }]}>{formatTime(date)}</Text>
         </RoundButton>
-        <RoundButton onPress={()=>{}} style={{ width: 230, backgroundColor: recordColor }}>
+        <RoundButton onPress={()=>{}} style={{ flex: 2, backgroundColor: recordColor }}>
           <Text style={[styles.text, { fontSize: 40 }]}>RECORD</Text>
         </RoundButton>
       </View>

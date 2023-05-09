@@ -12,9 +12,6 @@ export const styles = StyleSheet.create({
     borderRadius: 999999,
     backgroundColor: buttonColor,
     aspectRatio: 1,
-    width: 100,
-    margin: 35,
-    marginTop: 0,
   },
   pressed: {
     opacity: 0.5,

@@ -14,26 +14,30 @@ type Props = {
 };
 export function NavBar({ buttons }: Props): JSX.Element {
   const portrait = useDeviceOrientation() == 'portrait';
+  const buttonSize = 100;
+  const padding = 25;
+  const thickness = buttonSize + 2 * padding;
   
   return (
     <View style={[
       {
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
+        padding,
       },
       portrait ? {
         flexDirection: 'row',
-        height: 120,
+        height: thickness,
         width: "100%",
       } : {
         flexDirection: 'column',
         height: "100%",
-        width: 120,
+        width: thickness,
       }
     ]}>
       {
         buttons.map((button: NavBarButtonConfig, index: number) => (
-          <RoundButton onPress={button.onPress} style={{ width: 100 }} key={index}>
+          <RoundButton onPress={button.onPress} style={{ width: buttonSize }} key={index}>
             <MaterialIcons name={button.symbol} size={50} color={styles.text.color} />
           </RoundButton>
         ))
