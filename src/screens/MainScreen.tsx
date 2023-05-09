@@ -6,9 +6,11 @@ import { useState } from "react";
 import { MainScreenProps } from "../types";
 import { RoundButton } from "../components/RoundButton";
 import { recordColor } from "../colors";
+import { useDeviceOrientation } from '@react-native-community/hooks'
 
 export function MainScreen({ navigation }: MainScreenProps) {
   const [date, setDate] = useState(new Date("2000-01-01T08:00:00"));
+  const portrait = useDeviceOrientation() == 'portrait';
 
   const onChange = (_event: unknown, selectedDate: Date | undefined) => {
     if (selectedDate !== undefined) {
@@ -37,6 +39,7 @@ export function MainScreen({ navigation }: MainScreenProps) {
       <View style={[styles.backgroundColor, {
         width: '100%',
         flex: 1,
+        flexDirection: portrait ? 'column' : 'row',
         alignItems: 'center',
         justifyContent: 'center',
       }]}>
