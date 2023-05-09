@@ -30,7 +30,7 @@ export function NavBar({ buttons }: Props): JSX.Element {
         height: thickness,
         width: "100%",
       } : {
-        flexDirection: 'column',
+        flexDirection: 'column-reverse',
         height: "100%",
         width: thickness,
       }
