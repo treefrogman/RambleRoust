@@ -7,10 +7,12 @@ import { MainScreenProps } from "../types";
 import { RoundButton } from "../components/RoundButton";
 import { recordColor } from "../colors";
 import { useDeviceOrientation } from '@react-native-community/hooks'
+import useSizes from '../useSizes';
 
 export function MainScreen({ navigation }: MainScreenProps) {
   const [date, setDate] = useState(new Date("2000-01-01T08:00:00"));
   const portrait = useDeviceOrientation() == 'portrait';
+  const { mainScreen } = useSizes();
 
   const onChange = (_event: unknown, selectedDate: Date | undefined) => {
     if (selectedDate !== undefined) {
@@ -42,14 +44,14 @@ export function MainScreen({ navigation }: MainScreenProps) {
         flexDirection: portrait ? 'column' : 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        gap: 50,
-        padding: 25,
+        gap: mainScreen.gap,
+        padding: mainScreen.padding,
       }]}>
-        <RoundButton onPress={showModal} style={{ flex: 3, aspectRatio: portrait ? 1 : 1.7, maxWidth: '100%' }}>
-          <Text style={[styles.text, { fontSize: 80 }]}>{formatTime(date)}</Text>
+        <RoundButton onPress={showModal} style={{ flex: 3, minWidth: mainScreen.timeButton.minWidth, maxWidth: '100%' }}>
+          <Text style={[styles.text, { fontSize: mainScreen.timeButton.fontSize }]}>{formatTime(date)}</Text>
         </RoundButton>
-        <RoundButton onPress={()=>{}} style={{ flex: 2, backgroundColor: recordColor }}>
-          <Text style={[styles.text, { fontSize: 40 }]}>RECORD</Text>
+        <RoundButton onPress={()=>{}} style={{ flex: 2, minWidth: mainScreen.recordButton.minWidth, backgroundColor: recordColor }}>
+          <Text style={[styles.text, { fontSize: mainScreen.recordButton.fontSize }]}>{mainScreen.recordButton.fontSize}</Text>
         </RoundButton>
       </View>
     </ViewWithNavBar>
